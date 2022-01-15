@@ -189,8 +189,11 @@ while True:
         epaper.writeText(0, "Loading...")
         time.sleep(1)
         board.pauseEvents()
+        board.ser.close()
+        time.sleep(1)
         os.chdir("/home/pi/centaur")
-        os.system("sudo systemctl start centaur.service")
+        #os.system("sudo systemctl start centaur.service")
+        os.system("sudo ./centaur")
         # Once started we cannot return to DGTCentaurMods, we can kill that
         time.sleep(3)
         os.system("sudo systemctl stop DGTCentaurMods.service")
@@ -358,6 +361,8 @@ while True:
         # Pick up the engines from the engines folder and build the menu
         enginepath = str(pathlib.Path(__file__).parent.resolve()) + "/../engines/"
         enginefiles = os.listdir(enginepath)
+        enginefiles = list(filter(lambda x: os.path.isfile(enginepath + x), os.listdir(enginepath)))
+        print(enginefiles)
         for f in enginefiles:
             fn = str(f)
             if '.uci' not in fn:
