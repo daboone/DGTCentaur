@@ -1,0 +1,16 @@
+[Unit]
+Description=DGTCentaurMods software.
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 4
+ExecStart=/usr/bin/python3 /home/pi/DGTCentaurMods/game/menu.py
+WorkingDirectory=/home/pi/DGTCentaurMods
+Environment="PYTHONPATH=/home/pi/DGTCentaurMods"
+StandardOutput=inherit
+StandardError=inherit
+Restart=no
+User=pi
+
+[Install]
+WantedBy=multi-user.target
