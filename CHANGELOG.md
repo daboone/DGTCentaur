@@ -16,7 +16,7 @@ A developer friendly with pull request numbers mentioned.
 * Fix libsqllite-dev dependency enabling Stockfish builds on new image of Rasbian 
 * **Feature** Backup of original stockfish engine from centaur 
 * **Feature** New Chess engines maia, zahak and rodentiv in the install process
-* **Feature** RodentIV configuration on web page http://<PiZeroIPAddress>:5000/rodentivtuner
+* **Feature** RodentIV configuration on web page http://\<PiZeroIPAddress\>:5000/rodentivtuner
 * **Feature**  Alter build process to speed up Stockfish 
 
 2021 November
